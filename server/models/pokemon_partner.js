@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config");
 
-class User_profile extends Model {}
+class pokemon_partner extends Model {}
 
 Post.init(
   {

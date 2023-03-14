@@ -18,6 +18,13 @@ Post.init(
             len: [1],
         },
     },
+    earning_reseaon: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [1],
+        },
+    },
   },
   {
     sequelize,
