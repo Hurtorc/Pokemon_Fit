@@ -4,8 +4,7 @@ const Welcome = () => {
   return (
     <div>
       <h1>
-        GeeksforGeeks is a Computer 
-        Science portal for geeks.
+        Pokemon Fit
       </h1>
     </div>
   );
