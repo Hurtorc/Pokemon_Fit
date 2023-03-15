@@ -1,6 +1,6 @@
 // import models
 const User = require('./user');
-const User_profile = require('./user_profile');
+const User_profile = require('./profile');
 const Pokemon_partner = require('./pokemon_partner');
 const Food = require('./food');
 const Reward_earned = require('./reward_earned');
