@@ -1,7 +1,4 @@
 const { Model, DataTypes } = require("sequelize");
-
-//import { Model, DataTypes } from "sequelize"; suggestion for ES6
-// const sequelize = require("../config");
 const sequelize = require("../config/connection");
 
 class Pokemon_partner extends Model {}
