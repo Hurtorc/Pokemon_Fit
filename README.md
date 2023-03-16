@@ -1,6 +1,7 @@
 Pokemon Fit
 
 Table of Contents
+
  -Description
  -Built with
  -Getting Started
@@ -11,10 +12,12 @@ Table of Contents
  -Acknowledgments
 
 Description
+
  Welcome to your new Pokemon Fit. This application will get you on the right track to becoming your own best trainer. Your Pokemon Fit will equip you with a pokemon as an avatar and a calorie counter to set and meet your goal. Once achieved you will evolve your pokemon to it's next level. So get going, get disciplined, get fit, and evolve to your best self.
 
 
 Built with
+
 -REACT
 -Tailwind
 -Vite
@@ -23,6 +26,7 @@ Built with
 
 
 Getting Started
+
 Pokemon fit requires you to create and login to your account. You will meet your first Pokemon, "Ditto". Once you've input your age, height, weight, and diet; you will pick a new pokemon to train and your journey will begin.
 
 Installation 
