@@ -9,35 +9,27 @@ import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
+import CatchingPokemonTwoToneIcon from '@mui/icons-material/CatchingPokemonTwoTone';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props: any) {
+
+function Copyright(props) {
   return (
-<<<<<<< HEAD
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-=======
-    <div>
-      <h1>
+      {'Get Started With '}
+      <Link color="inherit" href="https://github.com/Hurtorc/Pokemon_Fit">
         Pokemon Fit
-      </h1>
-    </div>
->>>>>>> 46c812c66632f9d4480e7d34119c3e1b8f033804
+      </Link>{' '}
+    </Typography>
   );
 }
 
 const theme = createTheme();
 
 export default function SignInSide() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
@@ -56,12 +48,12 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://techcrunch.com/wp-content/uploads/2016/08/pokemon-influence.png?w=1390&crop=1)',
-            backgroundRepeat: 'no-repeat',
+            backgroundImage: 'url(https://pokemoncraze.com/wp-content/uploads/2016/07/Guide-How-Pokemon-GO-Gyms-Work-basics-pikachu-working-out.jpg)',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
+            backgroundSize: 'contain',
             backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
@@ -74,8 +66,8 @@ export default function SignInSide() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
+           <Avatar sx={{ m: 1, bgcolor: 'red' }}>
+              <CatchingPokemonIcon/>
             </Avatar>
             <Typography component="h1" variant="h5">
               Sign in
@@ -133,7 +125,3 @@ export default function SignInSide() {
     </ThemeProvider>
   );
 }
-
-};
-  
-export default Welcome;
