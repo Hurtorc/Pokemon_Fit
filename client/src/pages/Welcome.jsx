@@ -13,9 +13,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props: any) {
+function Copyright(props) {
   return (
-<<<<<<< HEAD
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
@@ -24,25 +23,18 @@ function Copyright(props: any) {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
-=======
-    <div>
-      <h1>
-        Pokemon Fit
-      </h1>
-    </div>
->>>>>>> 46c812c66632f9d4480e7d34119c3e1b8f033804
   );
 }
 
 const theme = createTheme();
 
-export default function SignInSide() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+export default function Welcome() {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      email: data.get("email"),
+      password: data.get("password"),
     });
   };
 
@@ -132,8 +124,4 @@ export default function SignInSide() {
       </Grid>
     </ThemeProvider>
   );
-}
-
 };
-  
-export default Welcome;
