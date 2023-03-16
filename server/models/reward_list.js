@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config");
+// const sequelize = require("../config");
+const sequelize = require("../config/connection");
 
 class Reward_list extends Model {}
 
-Post.init(
+Reward_list.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,11 +13,11 @@ Post.init(
       autoIncrement: true,
     },
     name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1],
-        },
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
     },
   },
   {
@@ -24,8 +25,8 @@ Post.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "post",
+    modelName: "reward_list",
   }
 );
 
-module.exports = Post;
+module.exports = Reward_list;

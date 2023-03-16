@@ -126,6 +126,4 @@ export default function SignInSide() {
   );
 }
 
-};
-  
 export default Welcome;
