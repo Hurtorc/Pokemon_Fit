@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config");
+// const sequelize = require("../config");
+const sequelize = require("../config/connection");
 
 class Profile extends Model {}
 
-Post.init(
+Profile.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -18,63 +19,63 @@ Post.init(
         key: "id",
       },
     },
-      pokemon_partner: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "pokemon",
-          key: "id",
-    },
-    DOB: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-            len: [1],
-        },
-    },
-    height: {
+    pokemon_partner: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "pokemon",
+        key: "id",
+      },
+      DOB: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-            len: [1],
+          len: [1],
         },
-    },
-    weight: {
+      },
+      height: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-            len: [1],
+          len: [1],
         },
-    },
-    gender: {
+      },
+      weight: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          len: [1],
+        },
+      },
+      gender: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            len: [1],
+          len: [1],
         },
-    },
-    streak: {
+      },
+      streak: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-            len: [1],
+          len: [1],
         },
-    },
-    diet_type: {
+      },
+      diet_type: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            len: [1],
+          len: [1],
         },
+      },
     },
-  },
   },
   {
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "post",
+    modelName: "profile",
   }
 );
 
-module.exports = Post;
+module.exports = Profile;
