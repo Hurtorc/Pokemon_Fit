@@ -1,10 +1,10 @@
 // import models
-const User = require('./user');
-const User_profile = require('./profile');
-const Pokemon_partner = require('./pokemon_partner');
-const Food = require('./food');
-const Reward_earned = require('./reward_earned');
-const Reward_list = require('./reward_list');
+const User = require("./user");
+const User_profile = require("./profile");
+const Pokemon_partner = require("./pokemon_partner");
+const Food = require("./food");
+const Reward_earned = require("./rewards_earned");
+const Reward_list = require("./reward_list");
 
 // // Products belongsTo Category
 // Product.belongsTo(Category, {
@@ -29,10 +29,10 @@ const Reward_list = require('./reward_list');
 // });
 
 module.exports = {
-    User,
-    User_profile,
-    Pokemon_partner,
-    Food,
-    Reward_earned,
-    Reward_list,
+  User,
+  User_profile,
+  Pokemon_partner,
+  Food,
+  Reward_earned,
+  Reward_list,
 };

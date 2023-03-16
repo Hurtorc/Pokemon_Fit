@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config");
+// const sequelize = require("../config");
+const sequelize = require("../config/connection");
 
 class Reward_earned extends Model {}
 
-Post.init(
+Reward_earned.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,26 +14,26 @@ Post.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-        references: {
-            model: "user",
-            key: "id",
-        },
+      references: {
+        model: "user",
+        key: "id",
+      },
     },
-      reward: {
-        type: DataTypes.INTEGER,
-            references: {
-            model: "reward_list",
-            key: "id",
-        },
+    reward: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "reward_list",
+        key: "id",
+      },
     },
-},
-{
-  sequelize,
-  timestamps: true,
-  freezeTableName: true,
-  underscored: true,
-  modelName: "post",
-}
+  },
+  {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "reward_earned",
+  }
 );
 
-module.exports = Post;
+module.exports = Reward_earned;

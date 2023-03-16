@@ -1,9 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config");
+// const bcrypt = require("bcrypt");
+//made change here to config connection.
+const sequelize = require("../config/connection");
 
-class food extends Model {}
+class Food extends Model {}
 
-Post.init(
+Food.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -18,54 +20,54 @@ Post.init(
         key: "id",
       },
     },
-      calorie: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-            len: [1],
-        },
+    calorie: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
     },
     protein: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        validate: {
-            len: [1],
-        },
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+        len: [1],
+      },
     },
     carbs: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        validate: {
-            len: [1],
-        },
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+        len: [1],
+      },
     },
     trans_fat: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        validate: {
-            len: [1],
-        },
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+        len: [1],
+      },
     },
     saturated_fat: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        validate: {
-            len: [1],
-        },
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+        len: [1],
+      },
     },
     sodium: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        validate: {
-            len: [1],
-        },
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+        len: [1],
+      },
     },
     sugar: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        validate: {
-            len: [1],
-        },
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+        len: [1],
+      },
     },
   },
   {
@@ -73,8 +75,8 @@ Post.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "post",
+    modelName: "food",
   }
 );
 
-module.exports = Post;
+module.exports = Food;

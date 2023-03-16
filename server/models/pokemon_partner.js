@@ -1,9 +1,12 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config");
 
-class User_profile extends Model {}
+//import { Model, DataTypes } from "sequelize"; suggestion for ES6
+// const sequelize = require("../config");
+const sequelize = require("../config/connection");
 
-Post.init(
+class Pokemon_partner extends Model {}
+
+Pokemon_partner.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,24 +16,24 @@ Post.init(
     },
     name: {
       type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1],
-        },
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
     },
     pic: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1],
-        },
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
     },
     gif: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1],
-        },
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
     },
   },
   {
@@ -38,8 +41,8 @@ Post.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "post",
+    modelName: "pokemon_partner",
   }
 );
 
-module.exports = Post;
+module.exports = Pokemon_partner;
