@@ -15,7 +15,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Copyright(props: any) {
   return (
-<<<<<<< HEAD
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
@@ -24,13 +23,6 @@ function Copyright(props: any) {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
-=======
-    <div>
-      <h1>
-        Pokemon Fit
-      </h1>
-    </div>
->>>>>>> 46c812c66632f9d4480e7d34119c3e1b8f033804
   );
 }
 
