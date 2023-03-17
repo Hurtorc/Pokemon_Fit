@@ -106,7 +106,7 @@ function DashboardContent() {
           >
             <IconButton
               edge="start"
-              color="inherit"
+              color="Pink"
               aria-label="open drawer"
               onClick={toggleDrawer}
               sx={{
