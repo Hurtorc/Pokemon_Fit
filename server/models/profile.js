@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 // const sequelize = require("../config");
-const sequelize = require("../config/connection");
+const sequelize = require("../config");
 
 class Profile extends Model {}
 
@@ -22,7 +22,7 @@ Profile.init(
     pokemon_partner: {
       type: DataTypes.INTEGER,
       references: {
-        model: "pokemon",
+        model: "pokemon_partner",
         key: "id",
       },
       DOB: {

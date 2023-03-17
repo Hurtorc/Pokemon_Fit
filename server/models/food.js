@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 // const bcrypt = require("bcrypt");
 //made change here to config connection.
-const sequelize = require("../config/connection");
+const sequelize = require("../config");
 
 class Food extends Model {}
 
