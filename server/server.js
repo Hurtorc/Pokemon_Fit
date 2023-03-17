@@ -1,6 +1,7 @@
 const express = require("express");
 const session = require("express-session");
-const sequelize = require("./config/connection");
+const sequelize = require("./config");
+const routes = require('./controller');
 require("dotenv").config();
 
 const app = express();
@@ -12,7 +13,8 @@ app.use(express.json());
 
 require("./routes/htmlRoutes")(app);
 
-//const routes = require('./controllers');
+// as example
+const models = require("./models");
 
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -37,7 +39,11 @@ app.use(express.static("../client/dist"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//apply routing middleware
+app.use(routes);
+
+//turn on connection to db and server
 app.listen(PORT, () => {
-  console.log(`Now listening on port: ${PORT}`);
+  console.log(`App listening on port ${PORT}!`);
   sequelize.sync({ force: false });
 });
