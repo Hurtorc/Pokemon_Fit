@@ -17,17 +17,18 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-// import { mainListItems, secondaryListItems } from './listItems';
-// import Chart from './Chart';
-// import Deposits from './Deposits';
-// import Orders from './Orders';
+import { mainListItems, secondaryListItems } from '../components/listItems';
+import Chart from '../components/Chart';
+import Deposits from '../components/Deposits';
+import Orders from '../components/Orders';
+import Pokemon from '../components/Pokemon';
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Pokeon Fit
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -122,7 +123,7 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              {/* ${user.username} Dashboard */}
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -145,11 +146,11 @@ function DashboardContent() {
             </IconButton>
           </Toolbar>
           <Divider />
-          {/* <List component="nav">
+          <List component="nav">
             {mainListItems}
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}
-          </List> */}
+          </List>
         </Drawer>
         <Box
           component="main"
@@ -166,6 +167,11 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
+              {/* Pokemon */}
+              <Grid item xs={12} md={8} lg={9}>
+                <Pokemon
+                  img = '' />
+              </Grid>
               {/* Chart */}
               <Grid item xs={12} md={8} lg={9}>
                 <Paper
@@ -176,7 +182,7 @@ function DashboardContent() {
                     height: 240,
                   }}
                 >
-                  
+                  <Chart />
                 </Paper>
               </Grid>
               {/* Recent Deposits */}
@@ -189,13 +195,13 @@ function DashboardContent() {
                     height: 240,
                   }}
                 >
-               
+               <Deposits />
                 </Paper>
               </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  
+                    <Orders />
                 </Paper>
               </Grid>
             </Grid>
