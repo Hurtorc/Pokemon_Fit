@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
+// const sequelize = require("../config");
 const sequelize = require("../config");
 
 class Reward_earned extends Model {}
