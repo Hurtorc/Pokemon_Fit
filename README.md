@@ -48,4 +48,3 @@ Authors and acknowledgment
 - Ranjit Saini
 - Giovanni Galeana
 - Nathan Phan
-
