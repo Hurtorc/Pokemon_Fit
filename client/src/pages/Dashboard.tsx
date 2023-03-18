@@ -60,6 +60,27 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
+
+// //post request for the user to post their food stuff
+// var myHeaders = new Headers();
+// myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+// var urlencoded = new URLSearchParams();
+// urlencoded.append("email", "Jose");
+// urlencoded.append("password", "Jose");
+
+// var requestOptions = {
+//   method: 'POST',
+//   headers: myHeaders,
+//   body: urlencoded,
+//   redirect: 'follow'
+// };
+
+// fetch("http://localhost:3001/api/user", requestOptions)
+//   .then(response => response.text())
+//   .then(result => console.log(result))
+//   .catch(error => console.log('error', error));
+
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     '& .MuiDrawer-paper': {
@@ -85,6 +106,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     },
   }),
 );
+
+const pokemonImg = fetch ('https://pokeapi.co/api/v2/pokemon/1')
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data.sprites.front_default);
+    return data.sprites.front_default;
+  });
 
 const mdTheme = createTheme();
 
