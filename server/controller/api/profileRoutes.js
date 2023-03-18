@@ -17,6 +17,7 @@ const newProfile = await Profile.create({
     weight: req.body.weight,
     gender: req.body.gender,
     pokemon_partner: req.body.pokemon_partner,
+    
 });
 } catch (err) {
     res.status(500).json(err);
