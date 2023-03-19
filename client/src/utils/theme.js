@@ -12,3 +12,5 @@ const changeTheme = (pokemon) => {
     root.style.setProperty('--accent-color', theme.accentColor);
     }
     
+
+export default changeTheme;

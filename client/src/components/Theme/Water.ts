@@ -1,6 +1,6 @@
 import { ThemeOptions } from '@mui/material/styles';
 
-export const themeOptions: ThemeOptions = {
+export const waterTheme: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
