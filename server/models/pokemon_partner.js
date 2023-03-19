@@ -27,10 +27,22 @@ Pokemon_partner.init(
     },
     gif: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,//future change to false and require gif
       validate: {
         len: [1],
       },
+    },
+    evolution: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "pokemon_partner",
+        key: "id",
+      },
+    },
+    legendary: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
     },
   },
   {

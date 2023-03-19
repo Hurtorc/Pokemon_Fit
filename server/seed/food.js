@@ -4,7 +4,7 @@ const Food_data = [
   {
     id: 1,
     user_id: 1,
-    calorie: 100,
+    calorie: 1200,
     protein: null,
     carbs: null,
     trans_fat: null,
