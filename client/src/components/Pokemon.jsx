@@ -9,6 +9,7 @@ export default function Pokemon(props) {
             component="img"
             height="140"
             image={props.image}
+            tag={props.tag}
             alt={props.name}
         />
         <CardContent>
