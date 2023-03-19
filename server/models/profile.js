@@ -21,6 +21,7 @@ Profile.init(
     },
     pokemon_partner: {
       type: DataTypes.INTEGER,
+      defaultValue: 1,
       references: {
         model: "pokemon_partner",
         key: "id",
@@ -41,6 +42,13 @@ Profile.init(
       },
     },
       DOB: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          len: [1],
+        },
+      },
+      calorie_goal: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {

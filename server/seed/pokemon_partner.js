@@ -2,15 +2,32 @@ const { Pokemon_partner } = require("../models");
 
 const Pokemon_partner_data = [
   {
-    id: 1,
-    name: Name,
-   pic: Pic,
-    gif: Gif,
-    height: 5,
-    weight: 150,
-    streak: null,
-    gender: male,
-    diet_type: vegetarian,
+    name: "Ditto",
+    pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png)",
+    gif: null,
+    evolution: null,
+    legendary: false,
+  },
+  {
+    name: "Charizard",
+    pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png)",
+    gif: null,
+    evolution: null,
+    legendary: false,
+  },
+  {
+    name: "Charmeleon",
+    pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png)",
+    gif: null,
+    evolution: 2,
+    legendary: false,
+  },
+  {
+    name: "Charmander",
+    pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png)",
+    gif: null,
+    evolution: 3,
+    legendary: false,
   },
 ];
 
