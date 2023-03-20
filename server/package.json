@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seed/seeds.js"
   },
   "dependencies": {
     "connect-session-sequelize": "^7.1.5",
