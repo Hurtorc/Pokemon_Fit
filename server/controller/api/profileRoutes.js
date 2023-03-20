@@ -9,13 +9,15 @@ router.post("/", async (req, res) => {
 try{
 const newProfile = await Profile.create({
     
-    user_id: req.session.userId || req.body.user_id,// or a user ID can be provided. This is unsafe if we ever went live, but for now it's fine.
+    // or a user ID can be provided. This is unsafe if we ever went live, but for now it's fine.
+    first_name: req.body.first_name,
     last_name: req.body.last_name,
     dob: req.body.dob,
     height: req.body.height,
     weight: req.body.weight,
     gender: req.body.gender,
     calorie_goal: req.body.calorie_goal,
+    user_id: req.session.userId || req.body.user_id,
 });
 res.status(200).json(newProfile);
 } catch (err) {
