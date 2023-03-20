@@ -24,7 +24,10 @@ router.get("/", async (req, res) => {
       ],
     });
     console.log(dashboardInfo);
-
+    if (!dashaboradInfo) {
+        res.status(400).json({ message: "No user Profile found!" });
+        return;
+      }
     if (DashaboradInfo.streak <= 1) {
       //check yesterday's calories against the goal
       if (1000 > dashboardInfo.goal && dashboardInfo.goal < 2000) {
@@ -74,10 +77,6 @@ router.get("/", async (req, res) => {
           id: dashboardInfo.pokemon_partner_id,
         },
       });
-    if (!dashaboradInfo) {
-      res.status(400).json({ message: "No user Profile found!" });
-      return;
-    }
     res.status(200).json(dashoboard, pokemon);
   } catch (err) {
     res.status(400).json({ message: "No user found!" });
