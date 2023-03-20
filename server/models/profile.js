@@ -21,6 +21,7 @@ Profile.init(
     },
     pokemon_partner: {
       type: DataTypes.INTEGER,
+      defaultValue: 1,
       references: {
         model: "pokemon_partner",
         key: "id",
@@ -40,7 +41,14 @@ Profile.init(
         len: [1],
       },
     },
-      DOB: {
+      dob: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        validate: {
+          len: [1],
+        },
+      },
+      calorie_goal: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
@@ -63,7 +71,7 @@ Profile.init(
       },
       gender: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [1],
         },
@@ -71,13 +79,14 @@ Profile.init(
       streak: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 0,
         validate: {
           len: [1],
         },
       },
       diet_type: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [1],
         },
