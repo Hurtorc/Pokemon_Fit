@@ -9,27 +9,26 @@ router.post("/", async (req, res) => {
 try{
 const newProfile = await Profile.create({
     
-    user_id: req.session.userId,
-    first_name: req.body.first_name,
+    user_id: req.session.userId || req.body.user_id,// or a user ID can be provided. This is unsafe if we ever went live, but for now it's fine.
     last_name: req.body.last_name,
-    DOB: req.body.DOB,
+    dob: req.body.dob,
     height: req.body.height,
     weight: req.body.weight,
     gender: req.body.gender,
-    pokemon_partner: req.body.pokemon_partner,
-    
+    calorie_goal: req.body.calorie_goal,
 });
+res.status(200).json(newProfile);
 } catch (err) {
     res.status(500).json(err);
   }
 });
 
 //GET info for a specific user Profile
-router.get("/", async (req, res) => {
+router.get("/:userID", async (req, res) => {
   try {
     const profile = await profile.findOne({
       where: {
-        user_id: req.body.user_id,
+        user_id: req.params.userID,
       },
     });
     if (!profile) {
