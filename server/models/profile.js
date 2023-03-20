@@ -25,6 +25,21 @@ Profile.init(
         model: "pokemon_partner",
         key: "id",
       },
+    },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
+    },
       DOB: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -68,7 +83,6 @@ Profile.init(
         },
       },
     },
-  },
   {
     sequelize,
     timestamps: true,

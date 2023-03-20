@@ -4,7 +4,7 @@ const Pokemon_partner = require("./pokemon_partner");
 const Food = require("./food");
 const Reward_list = require("./reward_list");
 const Reward_earned = require("./rewards_earned");
-const User_profile = require("./profile");
+const Profile = require("./profile");
 
 // // Products belongsTo Category
 // Product.belongsTo(Category, {
@@ -29,7 +29,7 @@ const User_profile = require("./profile");
 // });
 
 module.exports = {
-  User_profile,
+  Profile,
   User,
   Pokemon_partner,
   Food,

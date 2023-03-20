@@ -1,16 +1,18 @@
 import { ThemeOptions } from '@mui/material/styles';
 
-export const themeOptions: ThemeOptions = {
+export const dittoTheme: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#de7e0a',
+      main: '#6a1b9a',
+      light: '#ce93d8',
     },
     secondary: {
-      main: '#b96c21',
+      main: '#f50057',
     },
     background: {
-      default: '#6f2e2e',
+      default: '#ab47bc',
+      paper: '#e1bee7',
     },
   },
 };
