@@ -41,8 +41,8 @@ Profile.init(
         len: [1],
       },
     },
-      DOB: {
-        type: DataTypes.INTEGER,
+      dob: {
+        type: DataTypes.DATE,
         allowNull: false,
         validate: {
           len: [1],
@@ -71,7 +71,7 @@ Profile.init(
       },
       gender: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [1],
         },
@@ -79,13 +79,14 @@ Profile.init(
       streak: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 0,
         validate: {
           len: [1],
         },
       },
       diet_type: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [1],
         },

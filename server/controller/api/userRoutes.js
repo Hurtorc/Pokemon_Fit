@@ -4,7 +4,7 @@ const { User } = require("../../models");
 //User routes are completed for you so you don't have to deal with setting up authentication
 //Study this code to see how it works, and how it is connected to the frontend
 
-// POST /api/users is a registration route for creating a new user
+// POST /api/user is a registration route for creating a new user
 router.post("/", async (req, res) => {
   try {
     const newUser = await User.create({
