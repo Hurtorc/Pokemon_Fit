@@ -9,25 +9,21 @@ const { Profile, Food, Pokemon_partner } = require("../../models");
 //GET info for a specific user Profile
 router.get("/", async (req, res) => {
   try {
-    const dashboardInfo = await DashboardInfo.findOne({
+    const dashboardInfo = await Profile.findAll({
       where: {
+        user_id: req.session.user_id,
         $or: [
-          { "$profile.user_id$": req.session.user_id },
-          { "$food.user_id$": req.session.user_id },
+          { Food.user_id : req.session.user_id },
         ],
       },
       include: [
         {
-          model: B,
-          required: false,
-        },
-        {
-          model: C,
-          required: false,
+          model: Food,
+          required: true,
         },
       ],
     });
-    console.log(DashboardInfo);
+    console.log(dashboardInfo);
 
     if (DashaboradInfo.streak <= 1) {
       //check yesterday's calories against the goal
@@ -43,14 +39,14 @@ router.get("/", async (req, res) => {
             evolution: !null,
             legendary: false,
           },
-        })}//close if dashboard <= 1
-        //assign base pokemon randomly from basic pokemon list
+        })
         dashboardInfo.pokemon_partner_id = basic_pokemon[Math.floor(Math.random() * basic_pokemon.length)].id;
-
+    }//close if dashboard <= 1
         // if streak > 2 evo pokemon and reset streak    // inside evo if no evo available then assign legendary pokemon randomly
       if (dashboardInfo.streak === 2){
         //evo pokemon
-        const pokemonEvo = Pokemon_partner.findOne({
+        dashboardInfo.streak = 0;
+        const pokemonEvo = await Pokemon_partner.findOne({
           where: {
             id: dashboardInfo.evolution,
           },
@@ -64,12 +60,7 @@ router.get("/", async (req, res) => {
             });
             //assign legendary pokemon randomly from legendary pokemon list
             dashboardInfo.pokemon_partner_id = legendary_pokemon[Math.floor(Math.random() * legendary_pokemon.length)].id;
-        } else {
-          //build list of legendary pokemon
-
-          });
-          //assign legendary pokemon randomly from legendary pokemon list
-          dashboardInfo.pokemon_partner_id = legendary_pokemon[Math.floor(Math.random() * legendary_pokemon.length)].id;
+        }
       }
     }
     // all updates to profile should be done here
@@ -78,18 +69,16 @@ router.get("/", async (req, res) => {
       Pokemon_partner_id: dashboardInfo.pokemon_partner_id,
     });
 
-    const pokemon = Pokemon_partner.findOne({
+    const pokemon = await Pokemon_partner.findOne({
         where: {
           id: dashboardInfo.pokemon_partner_id,
         },
       });
-
-    });
-    if (!DashaboradInfo) {
+    if (!dashaboradInfo) {
       res.status(400).json({ message: "No user Profile found!" });
       return;
     }
-    res.status(200).json(DashboardInfo, pokemon);
+    res.status(200).json(dashoboard, pokemon);
   } catch (err) {
     res.status(400).json({ message: "No user found!" });
   }
