@@ -1,19 +1,24 @@
 const { Profile } = require("../models");
 
-const User_profile_data = [
+const profileData = [
   {
-    id: 1,
     user_id: 1,
-    pokemon_partner: null,
-    DOB: 1990,
+    first_name: "John",
+    last_name: "Doe",
+    dob: "12/12/1990",
     height: 5,
     weight: 150,
-    streak: null,
-    gender: male,
-    diet_type: vegetarian,
+    gender: "male",
+    calorie_goal: 1200,
+    diet_type: "vegetarian",
   },
 ];
 
-const seedProfile = () => Profile.bulkCreate(User_profile_data);
+const seedProfile = () => Profile.bulkCreate(profileData);
+
+// const seedProfile = async () => {
+//   await sequelize.sync({ force: true })
+//   await Profile.create(Profile_data[0]);
+// };
 
 module.exports = seedProfile;

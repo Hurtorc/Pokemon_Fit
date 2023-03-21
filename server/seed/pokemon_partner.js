@@ -1,3 +1,4 @@
+const sequelize = require("../config");
 const { Pokemon_partner } = require("../models");
 
 const Pokemon_partner_data = [
@@ -30,7 +31,7 @@ const Pokemon_partner_data = [
     legendary: false,
   },
   {
-    name: "Venusaur",
+    name: "Venusaur", // 5 in db
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png)",
     gif: null,
     evolution: null,
@@ -65,7 +66,7 @@ const Pokemon_partner_data = [
     legendary: false,
   },
   {
-    name: "Machop", //10
+    name: "Machop", // 10 in db
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/66.png)",
     gif: null,
     evolution: 9,
@@ -82,14 +83,14 @@ const Pokemon_partner_data = [
     name: "Wartortle",
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png)",
     gif: null,
-    evolution: 12,
+    evolution: 11,
     legendary: false,
   },
   {
     name: "Squirtle",
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png)",
     gif: null,
-    evolution: 13,
+    evolution: 12,
     legendary: false,
   },
   {
@@ -100,7 +101,7 @@ const Pokemon_partner_data = [
     legendary: false,
   },
   {
-    name: "Pikachu", //15
+    name: "Pikachu", // 15 in db
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png)",
     gif: null,
     evolution: 14,
@@ -135,7 +136,7 @@ const Pokemon_partner_data = [
     legendary: false,
   },
   {
-    name: "Golem", //20
+    name: "Golem", // 20 in db
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/76.png)",
     gif: null,
     evolution: null,
@@ -152,7 +153,7 @@ const Pokemon_partner_data = [
     name: "Geodude",
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/74.png)",
     gif: null,
-    evolution: 22,
+    evolution: 21,
     legendary: false,
   },
 
@@ -215,7 +216,14 @@ const Pokemon_partner_data = [
   },
 ];
 
-const seedPokemonPartner = () =>
-  Pokemon_partner.bulkCreate(Pokemon_partner_data);
+const seedPokemon = async () => {
+  //await sequelize.sync({ force: true })
+  let curMon = 0;
 
-module.exports = seedPokemonPartner;
+  while (Pokemon_partner_data.length > curMon){
+  await Pokemon_partner.create(Pokemon_partner_data[curMon]);
+  curMon++
+  }
+};
+
+module.exports = seedPokemon;
