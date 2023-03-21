@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -22,6 +23,11 @@ import Chart from '../components/Chart';
 import Deposits from '../components/Deposits';
 import Orders from '../components/Orders';
 import Pokemon from '../components/Pokemon';
+import Axios from 'axios';
+import { Button } from '@mui/material';
+import FormModal from '../components/FormModal';
+
+
 
 function Copyright(props) {
   return (
@@ -61,25 +67,20 @@ const AppBar = styled(MuiAppBar, {
 }));
 
 
-// //post request for the user to post their food stuff
-// var myHeaders = new Headers();
-// myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+//post request for the user to post their food stuff
+// const [food, setFood] = React.useState([]);
+// useEffect(() => {
 
-// var urlencoded = new URLSearchParams();
-// urlencoded.append("email", "Jose");
-// urlencoded.append("password", "Jose");
-
-// var requestOptions = {
-//   method: 'POST',
-//   headers: myHeaders,
-//   body: urlencoded,
-//   redirect: 'follow'
+// Axios.get ('/api/dashboard').then((response) => {
+//   console.log(response.data);
+//   return response;
+// });
+// const postFood = () => {
+//   Axios.post('/api/dashboard').then((response) => {
+//     setFood(response.data);
+//   });
 // };
 
-// fetch("http://localhost:3001/api/user", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -107,12 +108,12 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const pokemonImg = fetch ('https://pokeapi.co/api/v2/pokemon/1')
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data.sprites.front_default);
-    return data.sprites.front_default;
-  });
+// const pokemonImg = fetch ('https://pokeapi.co/api/v2/pokemon/1')
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data.sprites.front_default);
+//     return data.sprites.front_default;
+//   });
 
 const mdTheme = createTheme();
 
@@ -153,11 +154,6 @@ function DashboardContent() {
             >
               {/* ${user.username} Dashboard */}
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -194,11 +190,16 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
+            <Grid container spacing={2}>
               {/* Pokemon */}
               <Grid item xs={12} md={8} lg={9}>
                 <Pokemon
-                  img = '' />
+                  image = '/bulbasaur.jpg' 
+                  tag = 'plant'
+                  alt = 'pokemon'
+                  name = 'Bulbasaur'
+                  type = 'Grass'/>
+                  
               </Grid>
               {/* Chart */}
               <Grid item xs={12} md={8} lg={9}>
@@ -213,8 +214,8 @@ function DashboardContent() {
                   <Chart />
                 </Paper>
               </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
+              {/* POST Food */}
+              <Grid item xs={12} md={8} lg={9}>
                 <Paper
                   sx={{
                     p: 2,
@@ -223,13 +224,7 @@ function DashboardContent() {
                     height: 240,
                   }}
                 >
-               <Deposits />
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                    <Orders />
+                  <FormModal />
                 </Paper>
               </Grid>
             </Grid>
