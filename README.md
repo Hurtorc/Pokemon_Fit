@@ -3,13 +3,21 @@
 ## Table of Contents
 
  -Description
+ 
  -Built with
+ 
  -Getting Started
+ 
  -Installation
+ 
  -License
+ 
  -Roadmap
+ 
  -Contributing
+ 
  -Acknowledgments
+ 
 
 ## Description
 
@@ -19,8 +27,11 @@
 ## Built with
 
 -REACT
+
 -Tailwind
+
 -Vite
+
 -Express
 
 
