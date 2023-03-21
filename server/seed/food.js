@@ -1,8 +1,8 @@
+const sequelize = require("../config/index");
 const { Food } = require("../models");
 
 const Food_data = [
   {
-    id: 1,
     user_id: 1,
     calorie: 1200,
     protein: null,
@@ -14,6 +14,9 @@ const Food_data = [
   },
 ];
 
-const seedFoodData = () => Food.bulkCreate(Food_data);
+const seedFoodData = async () => {
+  //await sequelize.sync({ force: true })
+  await Food.bulkCreate(Food_data);
+};
 
 module.exports = seedFoodData;

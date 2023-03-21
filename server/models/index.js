@@ -28,12 +28,43 @@ const Profile = require("./profile");
 //   foreignKey: 'tag_id',
 // });
 
+Profile.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
+User.hasOne(Profile, {
+  foreignKey: "user_id",
+});
+
+Reward_earned.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
+User.hasMany(Reward_earned, {
+  foreignKey: "user_id",
+});
+
+Reward_earned.belongsTo(Reward_list, {
+  foreignKey: "reward",
+});
+
+Reward_list.hasMany(Reward_earned, {
+  foreignKey: "reward",
+});
+
+Food.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
+User.hasMany(Food, {
+  foreignKey: "user_id",
+});
+
 module.exports = {
-  Profile,
   User,
   Pokemon_partner,
   Food,
   Reward_earned,
   Reward_list,
-
+  Profile,
 };
