@@ -5,14 +5,15 @@
 
 ## Table of Contents
 
--Description
--Built with
--Getting Started
--Installation
--License
--Roadmap
--Contributing
--Acknowledgments
+- [Project description](#description)
+- [Built with](#built-with)
+- [Getting Started](#Getting-started)
+- [Installation](#installation)
+- [License](#license)
+- [Roadmap](#roadmap)
+- [Contribution](#contribution)
+- [Acknowledgments](#author)
+- [Meet the team](#team)
 
 ## Description
 
@@ -20,15 +21,11 @@ Welcome to your new Pokemon Fit. This application will get you on the right trac
 
 ## Built with
 
--REACT
 
-- [![React][react.js]][react-url]
-  -Tailwind
-  _[![Tailwind][tailwindcss]][tailwind-url]
-  -Vite
-  _[![Vite][vite]][vite-url]
-  -Express
-- [![Expressjs][express.js]][express-url]
+* [![React][React.js]][React-url]
+* [![Tailwind][tailwindcss]][tailwind-url]
+* [![Vite][vite]][vite-url]
+* [![Expressjs][express.js]][express-url]
 
 ## Getting Started
 
@@ -58,7 +55,7 @@ Pokemon Fit is a growing community and with that in mind, we would love to accep
 
 - Jose Cueto
 - Adam Latham
-- Ranjit Saini
+- Ranjit Saini [Link to Github](https://github.com/rjsaini88)
 - Giovanni Galeana
 - Nathan Phan
 
