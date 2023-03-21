@@ -10,7 +10,7 @@ export default function Pokemon(props) {
             height="140"
             image={props.image}
             tag={props.tag}
-            alt={props.name}
+            alt={props.alt}
         />
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">

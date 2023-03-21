@@ -1,4 +1,5 @@
 import * as React from "react";
+import axios from "axios";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -40,6 +41,21 @@ export default function Welcome() {
       password: data.get("password"),
     });
   };
+
+const name = document.getElementById("email");
+const pass = document.getElementById("password"); 
+
+axios.post ('/api/user', {
+  username: { name },
+  password: { pass }
+})
+.then(function (response) {
+  console.log(response);
+})
+.catch(function (error) {
+  console.log(error);
+});
+
 
   return (
     <ThemeProvider theme={theme}>
