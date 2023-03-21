@@ -19,7 +19,7 @@
 ## Built with
 
 -REACT
--Tailwind
+-Tailwind 
 -Vite
 -Express
 
@@ -36,9 +36,6 @@ In the command line run 'npm i' to install dependencies followed by 'node server
 
 
 ## Usage
-
-
-## License
 
 
 ## Roadmap
