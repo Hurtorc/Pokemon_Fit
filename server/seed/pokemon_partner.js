@@ -65,7 +65,7 @@ const Pokemon_partner_data = [
     legendary: false,
   },
   {
-    name: "Machop",
+    name: "Machop", //10
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/66.png)",
     gif: null,
     evolution: 9,
@@ -100,17 +100,17 @@ const Pokemon_partner_data = [
     legendary: false,
   },
   {
-    name: "Pikachu",
+    name: "Pikachu", //15
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png)",
     gif: null,
-    evolution: 16,
+    evolution: 14,
     legendary: false,
   },
   {
     name: "Pichu",
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/172.png)",
     gif: null,
-    evolution: 17,
+    evolution: 15,
     legendary: false,
   },
   {
@@ -124,18 +124,18 @@ const Pokemon_partner_data = [
     name: "Pidgeotto",
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png)",
     gif: null,
-    evolution: 19,
+    evolution: 17,
     legendary: false,
   },
   {
     name: "Pidgey",
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png)",
     gif: null,
-    evolution: 20,
+    evolution: 18,
     legendary: false,
   },
   {
-    name: "Golem",
+    name: "Golem", //20
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/76.png)",
     gif: null,
     evolution: null,
@@ -145,14 +145,14 @@ const Pokemon_partner_data = [
     name: "Graveler",
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/75.png)",
     gif: null,
-    evolution: 22,
+    evolution: 20,
     legendary: false,
   },
   {
     name: "Geodude",
     pic: "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/74.png)",
     gif: null,
-    evolution: 24,
+    evolution: 22,
     legendary: false,
   },
 
