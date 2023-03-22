@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "seed": "cd server && cd seed && node seeds.js",
     "start:dev": "concurrently \"npm run server\" \"cd client && npm run dev\"",
     "start": "npm run build && cd server && node server.js",
     "server": "cd server && nodemon server.js --ignore client",
