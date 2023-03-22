@@ -13,6 +13,7 @@ import Grid from "@mui/material/Grid";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Axios from "axios";
 
 function Copyright(props) {
   return (
@@ -45,16 +46,15 @@ export default function Welcome() {
 const name = document.getElementById("email");
 const pass = document.getElementById("password"); 
 
-axios.post ('/api/user', {
-  username: { name },
-  password: { pass }
-})
-.then(function (response) {
-  console.log(response);
-})
-.catch(function (error) {
-  console.log(error);
-});
+    const [username, setUsername] = React.useState([]);
+useEffect(() => {
+  const fetchUsername = async () => {
+    Axios.post("/api/dashboard").then((response) => {
+      setUsername(response.data);
+      console.log(response.data);
+      return response;
+    });
+  };
 
 
   return (
@@ -147,4 +147,5 @@ axios.post ('/api/user', {
       </Grid>
     </ThemeProvider>
   );
-}
+  })}
+
